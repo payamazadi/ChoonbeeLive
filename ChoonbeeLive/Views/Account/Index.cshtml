@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Manage Account & Registrations</h2>
+
+<h3>Competitors</h3>
+@if (ViewBag.Competitors.Count == 0)
+{
+    <p>There are currently no participants affiliated with this account.</p>
+}
+else
+{
+    <table>
+        <tr>
+            <td><b>Name</td>
+            <td><b>Age</b></td>
+            <td><b>Belt</b></td>
+            <td><b>School</b></td>
+            <td></td>
+        </tr>
+    @foreach(var competitor in ViewBag.Competitors)
+    {
+        string fullName = competitor.FirstName + " " + competitor.LastName;
+        <tr>
+            <td>@competitor.FirstName @competitor.LastName</td>
+            <td>@competitor.Age</td>
+            <td>@competitor.Rank.RankName</td>
+            <td>@competitor.School.Name</td>
+            <td>@Html.ActionLink("Edit", "Edit", "Participant", new {id = competitor.ParticipantId}, null)</td>
+        </tr>
+    }
+    </table>
+    <p>@Html.ActionLink("Create competitor..", "Create", "Participant")  </p>
+    
+}
+
+<h3>Upcoming tournaments registered for</h3>
+---<br />
+---<br />
+---<br />
+
+

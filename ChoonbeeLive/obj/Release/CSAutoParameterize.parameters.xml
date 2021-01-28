@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="league_pimaEntities-Web.config Connection String" description="league_pimaEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Choonbee.csdl|res://*/Models.Choonbee.ssdl|res://*/Models.Choonbee.msl;provider=MySql.Data.MySqlClient;provider connection string=&quot;server=choonbee;user id=choonbee;password=D3al3r0n;persistsecurityinfo=True;database=league_pima&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\azadi\\Desktop\\ChoonbeeLive\\ChoonbeeLive\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='league_pimaEntities']/@connectionString" />
+  </parameter>
+  <parameter name="league_pimaEntitiesMongo-Web.config Connection String" description="league_pimaEntitiesMongo Connection String used in web.config by the application to access the database." defaultValue="mongodb://choonbee:D3al3r0n@ds041387.mongolab.com:41387/choonbeelive" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\azadi\\Desktop\\ChoonbeeLive\\ChoonbeeLive\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='league_pimaEntitiesMongo']/@connectionString" />
+  </parameter>
+</parameters>

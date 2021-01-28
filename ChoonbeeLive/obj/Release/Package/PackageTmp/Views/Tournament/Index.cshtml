@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tournaments</h2>
+
+<h3>Upcoming Tournaments</h3>
+<table>
+    <tr><td><b>Tournament</b></td><td><b>Date</b></td><td></td></tr>
+
+@foreach (var tournament in ViewBag.Future)
+{
+      <tr><td>@tournament.Name</td><td>@tournament.DateHeld</td><td>@Html.ActionLink("Register!", "Register", new {id = tournament.TournamentId})</td></tr>
+}
+</table>    
+
+<h3>Past Tournaments</h3>
+<table>
+    <tr><td><b>Tournament</b></td><td><b>Date</b></td></tr>
+@foreach (var tournament in ViewBag.Past)
+{
+    String tournamentName = tournament.Name.ToString();
+    <tr><td>@Html.ActionLink(tournamentName, "Details", new {id = tournament.TournamentId})</td><td>@tournament.DateHeld</td></tr>
+}
+</table>

@@ -1,0 +1,685 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="league_pimaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="league_pimaEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="AgeGroups" EntityType="league_pimaModel.AgeGroup" />
+    <EntitySet Name="DivisionDefaults" EntityType="league_pimaModel.DivisionDefault" />
+    <EntitySet Name="DivisionFormScores" EntityType="league_pimaModel.DivisionFormScore" />
+    <EntitySet Name="DivisionFormTieHistories" EntityType="league_pimaModel.DivisionFormTieHistory" />
+    <EntitySet Name="DivisionParticipants" EntityType="league_pimaModel.DivisionParticipant" />
+    <EntitySet Name="Divisions" EntityType="league_pimaModel.Division" />
+    <EntitySet Name="DivisionStatuses" EntityType="league_pimaModel.DivisionStatus" />
+    <EntitySet Name="DivisionTypes" EntityType="league_pimaModel.DivisionType" />
+    <EntitySet Name="DivisionWinners" EntityType="league_pimaModel.DivisionWinner" />
+    <EntitySet Name="Participants" EntityType="league_pimaModel.Participant" />
+    <EntitySet Name="RankGroups" EntityType="league_pimaModel.RankGroup" />
+    <EntitySet Name="Ranks" EntityType="league_pimaModel.Rank" />
+    <EntitySet Name="Schools" EntityType="league_pimaModel.School" />
+    <EntitySet Name="TournamentParticipants" EntityType="league_pimaModel.TournamentParticipant" />
+    <EntitySet Name="Tournaments" EntityType="league_pimaModel.Tournament" />
+    <EntitySet Name="TournamentTeams" EntityType="league_pimaModel.TournamentTeam" />
+    <AssociationSet Name="DivisionDefaults_ibfk_2" Association="league_pimaModel.DivisionDefaults_ibfk_2">
+      <End Role="AgeGroups" EntitySet="AgeGroups" />
+      <End Role="DivisionDefaults" EntitySet="DivisionDefaults" />
+    </AssociationSet>
+    <AssociationSet Name="Divisions_ibfk_3" Association="league_pimaModel.Divisions_ibfk_3">
+      <End Role="AgeGroups" EntitySet="AgeGroups" />
+      <End Role="Divisions" EntitySet="Divisions" />
+    </AssociationSet>
+    <AssociationSet Name="DivisionDefaults_ibfk_1" Association="league_pimaModel.DivisionDefaults_ibfk_1">
+      <End Role="RankGroups" EntitySet="RankGroups" />
+      <End Role="DivisionDefaults" EntitySet="DivisionDefaults" />
+    </AssociationSet>
+    <AssociationSet Name="DivisionDefaults_ibfk_3" Association="league_pimaModel.DivisionDefaults_ibfk_3">
+      <End Role="DivisionTypes" EntitySet="DivisionTypes" />
+      <End Role="DivisionDefaults" EntitySet="DivisionDefaults" />
+    </AssociationSet>
+    <AssociationSet Name="DivisionFormScores_ibfk_1" Association="league_pimaModel.DivisionFormScores_ibfk_1">
+      <End Role="Divisions" EntitySet="Divisions" />
+      <End Role="DivisionFormScores" EntitySet="DivisionFormScores" />
+    </AssociationSet>
+    <AssociationSet Name="DivisionFormScores_ibfk_2" Association="league_pimaModel.DivisionFormScores_ibfk_2">
+      <End Role="Participants" EntitySet="Participants" />
+      <End Role="DivisionFormScores" EntitySet="DivisionFormScores" />
+    </AssociationSet>
+    <AssociationSet Name="DivisionFormTieHistory_ibfk_1" Association="league_pimaModel.DivisionFormTieHistory_ibfk_1">
+      <End Role="Participants" EntitySet="Participants" />
+      <End Role="DivisionFormTieHistory" EntitySet="DivisionFormTieHistories" />
+    </AssociationSet>
+    <AssociationSet Name="DivisionFormTieHistory_ibfk_2" Association="league_pimaModel.DivisionFormTieHistory_ibfk_2">
+      <End Role="Participants" EntitySet="Participants" />
+      <End Role="DivisionFormTieHistory" EntitySet="DivisionFormTieHistories" />
+    </AssociationSet>
+    <AssociationSet Name="DivisionFormTieHistory_ibfk_3" Association="league_pimaModel.DivisionFormTieHistory_ibfk_3">
+      <End Role="Divisions" EntitySet="Divisions" />
+      <End Role="DivisionFormTieHistory" EntitySet="DivisionFormTieHistories" />
+    </AssociationSet>
+    <AssociationSet Name="DivisionFormTieHistory_ibfk_4" Association="league_pimaModel.DivisionFormTieHistory_ibfk_4">
+      <End Role="Divisions" EntitySet="Divisions" />
+      <End Role="DivisionFormTieHistory" EntitySet="DivisionFormTieHistories" />
+    </AssociationSet>
+    <AssociationSet Name="DivisionParticipants_ibfk_1" Association="league_pimaModel.DivisionParticipants_ibfk_1">
+      <End Role="Divisions" EntitySet="Divisions" />
+      <End Role="DivisionParticipants" EntitySet="DivisionParticipants" />
+    </AssociationSet>
+    <AssociationSet Name="DivisionParticipants_ibfk_2" Association="league_pimaModel.DivisionParticipants_ibfk_2">
+      <End Role="Participants" EntitySet="Participants" />
+      <End Role="DivisionParticipants" EntitySet="DivisionParticipants" />
+    </AssociationSet>
+    <AssociationSet Name="Divisions_ibfk_1" Association="league_pimaModel.Divisions_ibfk_1">
+      <End Role="RankGroups" EntitySet="RankGroups" />
+      <End Role="Divisions" EntitySet="Divisions" />
+    </AssociationSet>
+    <AssociationSet Name="Divisions_ibfk_2" Association="league_pimaModel.Divisions_ibfk_2">
+      <End Role="Tournaments" EntitySet="Tournaments" />
+      <End Role="Divisions" EntitySet="Divisions" />
+    </AssociationSet>
+    <AssociationSet Name="Divisions_ibfk_4" Association="league_pimaModel.Divisions_ibfk_4">
+      <End Role="DivisionTypes" EntitySet="DivisionTypes" />
+      <End Role="Divisions" EntitySet="Divisions" />
+    </AssociationSet>
+    <AssociationSet Name="Divisions_ibfk_5" Association="league_pimaModel.Divisions_ibfk_5">
+      <End Role="DivisionStatuses" EntitySet="DivisionStatuses" />
+      <End Role="Divisions" EntitySet="Divisions" />
+    </AssociationSet>
+    <AssociationSet Name="DivisionWinners_ibfk_1" Association="league_pimaModel.DivisionWinners_ibfk_1">
+      <End Role="Divisions" EntitySet="Divisions" />
+      <End Role="DivisionWinners" EntitySet="DivisionWinners" />
+    </AssociationSet>
+    <AssociationSet Name="DivisionWinners_ibfk_2" Association="league_pimaModel.DivisionWinners_ibfk_2">
+      <End Role="Participants" EntitySet="Participants" />
+      <End Role="DivisionWinners" EntitySet="DivisionWinners" />
+    </AssociationSet>
+    <AssociationSet Name="Participants_ibfk_1" Association="league_pimaModel.Participants_ibfk_1">
+      <End Role="Schools" EntitySet="Schools" />
+      <End Role="Participants" EntitySet="Participants" />
+    </AssociationSet>
+    <AssociationSet Name="Participants_ibfk_3" Association="league_pimaModel.Participants_ibfk_3">
+      <End Role="Ranks" EntitySet="Ranks" />
+      <End Role="Participants" EntitySet="Participants" />
+    </AssociationSet>
+    <AssociationSet Name="TournamentParticipants_ibfk_2" Association="league_pimaModel.TournamentParticipants_ibfk_2">
+      <End Role="Participants" EntitySet="Participants" />
+      <End Role="TournamentParticipants" EntitySet="TournamentParticipants" />
+    </AssociationSet>
+    <AssociationSet Name="TournamentTeams_ibfk_2" Association="league_pimaModel.TournamentTeams_ibfk_2">
+      <End Role="Schools" EntitySet="Schools" />
+      <End Role="TournamentTeams" EntitySet="TournamentTeams" />
+    </AssociationSet>
+    <AssociationSet Name="TournamentParticipants_ibfk_1" Association="league_pimaModel.TournamentParticipants_ibfk_1">
+      <End Role="Tournaments" EntitySet="Tournaments" />
+      <End Role="TournamentParticipants" EntitySet="TournamentParticipants" />
+    </AssociationSet>
+    <AssociationSet Name="TournamentParticipants_ibfk_3" Association="league_pimaModel.TournamentParticipants_ibfk_3">
+      <End Role="Tournaments" EntitySet="Tournaments" />
+      <End Role="TournamentParticipants" EntitySet="TournamentParticipants" />
+    </AssociationSet>
+    <AssociationSet Name="TournamentTeams_ibfk_1" Association="league_pimaModel.TournamentTeams_ibfk_1">
+      <End Role="Tournaments" EntitySet="Tournaments" />
+      <End Role="TournamentTeams" EntitySet="TournamentTeams" />
+    </AssociationSet>
+    <AssociationSet Name="RankGroupRanks" Association="league_pimaModel.RankGroupRanks">
+      <End Role="RankGroups" EntitySet="RankGroups" />
+      <End Role="Ranks" EntitySet="Ranks" />
+    </AssociationSet>
+    <AssociationSet Name="TournamentTeamMembers" Association="league_pimaModel.TournamentTeamMembers">
+      <End Role="TournamentTeams" EntitySet="TournamentTeams" />
+      <End Role="Participants" EntitySet="Participants" />
+    </AssociationSet>
+    <EntitySet Name="Seasons" EntityType="league_pimaModel.Season" />
+    <AssociationSet Name="Tournaments_ibfk_1" Association="league_pimaModel.Tournaments_ibfk_1">
+      <End Role="Season" EntitySet="Seasons" />
+      <End Role="Tournament" EntitySet="Tournaments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AgeGroup">
+    <Key>
+      <PropertyRef Name="AgeGroupId" />
+    </Key>
+    <Property Name="AgeGroupId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="MinAge" Type="Int32" Nullable="false" />
+    <Property Name="MaxAge" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DivisionDefaults" Relationship="league_pimaModel.DivisionDefaults_ibfk_2" FromRole="AgeGroups" ToRole="DivisionDefaults" />
+    <NavigationProperty Name="Divisions" Relationship="league_pimaModel.Divisions_ibfk_3" FromRole="AgeGroups" ToRole="Divisions" />
+  </EntityType>
+  <EntityType Name="DivisionDefault">
+    <Key>
+      <PropertyRef Name="DivisionDefaultId" />
+    </Key>
+    <Property Name="DivisionDefaultId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FriendlyId" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="RankGroupId" Type="Int32" Nullable="false" />
+    <Property Name="Genders" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="AgeGroupId" Type="Int32" Nullable="false" />
+    <Property Name="DivisionTypeId" Type="Int32" Nullable="false" />
+    <Property Name="DateEntered" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Order" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AgeGroup" Relationship="league_pimaModel.DivisionDefaults_ibfk_2" FromRole="DivisionDefaults" ToRole="AgeGroups" />
+    <NavigationProperty Name="RankGroup" Relationship="league_pimaModel.DivisionDefaults_ibfk_1" FromRole="DivisionDefaults" ToRole="RankGroups" />
+    <NavigationProperty Name="DivisionType" Relationship="league_pimaModel.DivisionDefaults_ibfk_3" FromRole="DivisionDefaults" ToRole="DivisionTypes" />
+  </EntityType>
+  <EntityType Name="DivisionFormScore">
+    <Key>
+      <PropertyRef Name="DivisionId" />
+      <PropertyRef Name="ParticipantId" />
+    </Key>
+    <Property Name="DivisionId" Type="Int32" Nullable="false" />
+    <Property Name="ParticipantId" Type="Int32" Nullable="false" />
+    <Property Name="JudgeOneScore" Type="Single" Nullable="false" />
+    <Property Name="JudgeTwoScore" Type="Single" Nullable="false" />
+    <Property Name="JudgeThreeScore" Type="Single" Nullable="false" />
+    <Property Name="Sum" Type="Single" Nullable="false" />
+    <Property Name="DateEntered" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Division" Relationship="league_pimaModel.DivisionFormScores_ibfk_1" FromRole="DivisionFormScores" ToRole="Divisions" />
+    <NavigationProperty Name="Participant" Relationship="league_pimaModel.DivisionFormScores_ibfk_2" FromRole="DivisionFormScores" ToRole="Participants" />
+  </EntityType>
+  <EntityType Name="DivisionFormTieHistory">
+    <Key>
+      <PropertyRef Name="DivisionId" />
+      <PropertyRef Name="ForSecondOrThird" />
+    </Key>
+    <Property Name="DivisionId" Type="Int32" Nullable="false" />
+    <Property Name="ForSecondOrThird" Type="Boolean" Nullable="false" />
+    <Property Name="PlayerOneId" Type="Int32" Nullable="false" />
+    <Property Name="PlayerTwoId" Type="Int32" Nullable="false" />
+    <Property Name="Winner" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Participant" Relationship="league_pimaModel.DivisionFormTieHistory_ibfk_1" FromRole="DivisionFormTieHistory" ToRole="Participants" />
+    <NavigationProperty Name="Participant1" Relationship="league_pimaModel.DivisionFormTieHistory_ibfk_2" FromRole="DivisionFormTieHistory" ToRole="Participants" />
+    <NavigationProperty Name="Division" Relationship="league_pimaModel.DivisionFormTieHistory_ibfk_3" FromRole="DivisionFormTieHistory" ToRole="Divisions" />
+    <NavigationProperty Name="Division1" Relationship="league_pimaModel.DivisionFormTieHistory_ibfk_4" FromRole="DivisionFormTieHistory" ToRole="Divisions" />
+  </EntityType>
+  <EntityType Name="DivisionParticipant">
+    <Key>
+      <PropertyRef Name="DivisionId" />
+      <PropertyRef Name="ParticipantId" />
+    </Key>
+    <Property Name="DivisionId" Type="Int32" Nullable="false" />
+    <Property Name="ParticipantId" Type="Int32" Nullable="false" />
+    <Property Name="DateEntered" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Division" Relationship="league_pimaModel.DivisionParticipants_ibfk_1" FromRole="DivisionParticipants" ToRole="Divisions" />
+    <NavigationProperty Name="Participant" Relationship="league_pimaModel.DivisionParticipants_ibfk_2" FromRole="DivisionParticipants" ToRole="Participants" />
+  </EntityType>
+  <EntityType Name="Division">
+    <Key>
+      <PropertyRef Name="DivisionId" />
+    </Key>
+    <Property Name="DivisionId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TournamentId" Type="Int32" Nullable="false" />
+    <Property Name="ParentDivisionId" Type="Int32" Nullable="false" />
+    <Property Name="FriendlyId" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="RankGroupId" Type="Int32" Nullable="false" />
+    <Property Name="AgeGroupId" Type="Int32" Nullable="false" />
+    <Property Name="DivisionTypeId" Type="Int32" Nullable="false" />
+    <Property Name="Genders" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="AdditionalidentifierText" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="HadTieBreaker" Type="Boolean" Nullable="false" />
+    <Property Name="DivisionStatusId" Type="Int32" Nullable="false" />
+    <Property Name="DateEntered" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Order" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AgeGroup" Relationship="league_pimaModel.Divisions_ibfk_3" FromRole="Divisions" ToRole="AgeGroups" />
+    <NavigationProperty Name="DivisionFormScores" Relationship="league_pimaModel.DivisionFormScores_ibfk_1" FromRole="Divisions" ToRole="DivisionFormScores" />
+    <NavigationProperty Name="DivisionFormTieHistories" Relationship="league_pimaModel.DivisionFormTieHistory_ibfk_3" FromRole="Divisions" ToRole="DivisionFormTieHistory" />
+    <NavigationProperty Name="DivisionFormTieHistories1" Relationship="league_pimaModel.DivisionFormTieHistory_ibfk_4" FromRole="Divisions" ToRole="DivisionFormTieHistory" />
+    <NavigationProperty Name="DivisionParticipants" Relationship="league_pimaModel.DivisionParticipants_ibfk_1" FromRole="Divisions" ToRole="DivisionParticipants" />
+    <NavigationProperty Name="RankGroup" Relationship="league_pimaModel.Divisions_ibfk_1" FromRole="Divisions" ToRole="RankGroups" />
+    <NavigationProperty Name="Tournament" Relationship="league_pimaModel.Divisions_ibfk_2" FromRole="Divisions" ToRole="Tournaments" />
+    <NavigationProperty Name="DivisionType" Relationship="league_pimaModel.Divisions_ibfk_4" FromRole="Divisions" ToRole="DivisionTypes" />
+    <NavigationProperty Name="DivisionStatus" Relationship="league_pimaModel.Divisions_ibfk_5" FromRole="Divisions" ToRole="DivisionStatuses" />
+    <NavigationProperty Name="DivisionWinners" Relationship="league_pimaModel.DivisionWinners_ibfk_1" FromRole="Divisions" ToRole="DivisionWinners" />
+  </EntityType>
+  <EntityType Name="DivisionStatus">
+    <Key>
+      <PropertyRef Name="DivisionStatusId" />
+    </Key>
+    <Property Name="DivisionStatusId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Divisions" Relationship="league_pimaModel.Divisions_ibfk_5" FromRole="DivisionStatuses" ToRole="Divisions" />
+  </EntityType>
+  <EntityType Name="DivisionType">
+    <Key>
+      <PropertyRef Name="DivisionTypeId" />
+    </Key>
+    <Property Name="DivisionTypeId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="DivisionDefaults" Relationship="league_pimaModel.DivisionDefaults_ibfk_3" FromRole="DivisionTypes" ToRole="DivisionDefaults" />
+    <NavigationProperty Name="Divisions" Relationship="league_pimaModel.Divisions_ibfk_4" FromRole="DivisionTypes" ToRole="Divisions" />
+  </EntityType>
+  <EntityType Name="DivisionWinner">
+    <Key>
+      <PropertyRef Name="DivisionId" />
+      <PropertyRef Name="ParticipantId" />
+    </Key>
+    <Property Name="DivisionId" Type="Int32" Nullable="false" />
+    <Property Name="ParticipantId" Type="Int32" Nullable="false" />
+    <Property Name="Rank" Type="Int32" Nullable="false" />
+    <Property Name="Points" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Division" Relationship="league_pimaModel.DivisionWinners_ibfk_1" FromRole="DivisionWinners" ToRole="Divisions" />
+    <NavigationProperty Name="Participant" Relationship="league_pimaModel.DivisionWinners_ibfk_2" FromRole="DivisionWinners" ToRole="Participants" />
+  </EntityType>
+  <EntityType Name="Participant">
+    <Key>
+      <PropertyRef Name="ParticipantId" />
+    </Key>
+    <Property Name="ParticipantId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="RankId" Type="Int32" Nullable="false" />
+    <Property Name="HeightFeet" Type="Int32" Nullable="false" />
+    <Property Name="HeightInches" Type="Int32" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Style" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Form" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Weapon" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SchoolId" Type="Int32" Nullable="false" />
+    <Property Name="DateEntered" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateModified" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="League" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="DivisionFormScores" Relationship="league_pimaModel.DivisionFormScores_ibfk_2" FromRole="Participants" ToRole="DivisionFormScores" />
+    <NavigationProperty Name="DivisionFormTieHistories" Relationship="league_pimaModel.DivisionFormTieHistory_ibfk_1" FromRole="Participants" ToRole="DivisionFormTieHistory" />
+    <NavigationProperty Name="DivisionFormTieHistories1" Relationship="league_pimaModel.DivisionFormTieHistory_ibfk_2" FromRole="Participants" ToRole="DivisionFormTieHistory" />
+    <NavigationProperty Name="DivisionParticipants" Relationship="league_pimaModel.DivisionParticipants_ibfk_2" FromRole="Participants" ToRole="DivisionParticipants" />
+    <NavigationProperty Name="DivisionWinners" Relationship="league_pimaModel.DivisionWinners_ibfk_2" FromRole="Participants" ToRole="DivisionWinners" />
+    <NavigationProperty Name="School" Relationship="league_pimaModel.Participants_ibfk_1" FromRole="Participants" ToRole="Schools" />
+    <NavigationProperty Name="Rank" Relationship="league_pimaModel.Participants_ibfk_3" FromRole="Participants" ToRole="Ranks" />
+    <NavigationProperty Name="TournamentParticipants" Relationship="league_pimaModel.TournamentParticipants_ibfk_2" FromRole="Participants" ToRole="TournamentParticipants" />
+    <NavigationProperty Name="TournamentTeams" Relationship="league_pimaModel.TournamentTeamMembers" FromRole="Participants" ToRole="TournamentTeams" />
+  </EntityType>
+  <EntityType Name="RankGroup">
+    <Key>
+      <PropertyRef Name="RankGroupId" />
+    </Key>
+    <Property Name="RankGroupId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="DivisionDefaults" Relationship="league_pimaModel.DivisionDefaults_ibfk_1" FromRole="RankGroups" ToRole="DivisionDefaults" />
+    <NavigationProperty Name="Divisions" Relationship="league_pimaModel.Divisions_ibfk_1" FromRole="RankGroups" ToRole="Divisions" />
+    <NavigationProperty Name="Ranks" Relationship="league_pimaModel.RankGroupRanks" FromRole="RankGroups" ToRole="Ranks" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rank">
+    <Key>
+      <PropertyRef Name="RankId" />
+    </Key>
+    <Property Name="RankId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="RankName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Participants" Relationship="league_pimaModel.Participants_ibfk_3" FromRole="Ranks" ToRole="Participants" />
+    <NavigationProperty Name="RankGroups" Relationship="league_pimaModel.RankGroupRanks" FromRole="Ranks" ToRole="RankGroups" />
+  </EntityType>
+  <EntityType Name="School">
+    <Key>
+      <PropertyRef Name="SchoolId" />
+    </Key>
+    <Property Name="SchoolId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="LocationText" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Participants" Relationship="league_pimaModel.Participants_ibfk_1" FromRole="Schools" ToRole="Participants" />
+    <NavigationProperty Name="TournamentTeams" Relationship="league_pimaModel.TournamentTeams_ibfk_2" FromRole="Schools" ToRole="TournamentTeams" />
+  </EntityType>
+  <EntityType Name="TournamentParticipant">
+    <Key>
+      <PropertyRef Name="TournamentId" />
+      <PropertyRef Name="ParticipantId" />
+    </Key>
+    <Property Name="TournamentId" Type="Int32" Nullable="false" />
+    <Property Name="ParticipantId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Participant" Relationship="league_pimaModel.TournamentParticipants_ibfk_2" FromRole="TournamentParticipants" ToRole="Participants" />
+    <NavigationProperty Name="Tournament" Relationship="league_pimaModel.TournamentParticipants_ibfk_1" FromRole="TournamentParticipants" ToRole="Tournaments" />
+    <NavigationProperty Name="Tournament1" Relationship="league_pimaModel.TournamentParticipants_ibfk_3" FromRole="TournamentParticipants" ToRole="Tournaments" />
+  </EntityType>
+  <EntityType Name="Tournament">
+    <Key>
+      <PropertyRef Name="TournamentId" />
+    </Key>
+    <Property Name="TournamentId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="DateEntered" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateHeld" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Divisions" Relationship="league_pimaModel.Divisions_ibfk_2" FromRole="Tournaments" ToRole="Divisions" />
+    <NavigationProperty Name="TournamentParticipants" Relationship="league_pimaModel.TournamentParticipants_ibfk_1" FromRole="Tournaments" ToRole="TournamentParticipants" />
+    <NavigationProperty Name="TournamentParticipants1" Relationship="league_pimaModel.TournamentParticipants_ibfk_3" FromRole="Tournaments" ToRole="TournamentParticipants" />
+    <NavigationProperty Name="TournamentTeams" Relationship="league_pimaModel.TournamentTeams_ibfk_1" FromRole="Tournaments" ToRole="TournamentTeams" />
+    <Property Type="Int32" Name="SeasonId" Nullable="false" />
+    <NavigationProperty Name="Season" Relationship="league_pimaModel.Tournaments_ibfk_1" FromRole="Tournament" ToRole="Season" />
+  </EntityType>
+  <EntityType Name="TournamentTeam">
+    <Key>
+      <PropertyRef Name="TeamId" />
+    </Key>
+    <Property Name="TeamId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TournamentId" Type="Int32" Nullable="false" />
+    <Property Name="SchoolId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="School" Relationship="league_pimaModel.TournamentTeams_ibfk_2" FromRole="TournamentTeams" ToRole="Schools" />
+    <NavigationProperty Name="Tournament" Relationship="league_pimaModel.TournamentTeams_ibfk_1" FromRole="TournamentTeams" ToRole="Tournaments" />
+    <NavigationProperty Name="Participants" Relationship="league_pimaModel.TournamentTeamMembers" FromRole="TournamentTeams" ToRole="Participants" />
+  </EntityType>
+  <Association Name="DivisionDefaults_ibfk_2">
+    <End Role="AgeGroups" Type="league_pimaModel.AgeGroup" Multiplicity="1" />
+    <End Role="DivisionDefaults" Type="league_pimaModel.DivisionDefault" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AgeGroups">
+        <PropertyRef Name="AgeGroupId" />
+      </Principal>
+      <Dependent Role="DivisionDefaults">
+        <PropertyRef Name="AgeGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Divisions_ibfk_3">
+    <End Role="AgeGroups" Type="league_pimaModel.AgeGroup" Multiplicity="1" />
+    <End Role="Divisions" Type="league_pimaModel.Division" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AgeGroups">
+        <PropertyRef Name="AgeGroupId" />
+      </Principal>
+      <Dependent Role="Divisions">
+        <PropertyRef Name="AgeGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DivisionDefaults_ibfk_1">
+    <End Role="RankGroups" Type="league_pimaModel.RankGroup" Multiplicity="1" />
+    <End Role="DivisionDefaults" Type="league_pimaModel.DivisionDefault" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RankGroups">
+        <PropertyRef Name="RankGroupId" />
+      </Principal>
+      <Dependent Role="DivisionDefaults">
+        <PropertyRef Name="RankGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DivisionDefaults_ibfk_3">
+    <End Role="DivisionTypes" Type="league_pimaModel.DivisionType" Multiplicity="1" />
+    <End Role="DivisionDefaults" Type="league_pimaModel.DivisionDefault" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DivisionTypes">
+        <PropertyRef Name="DivisionTypeId" />
+      </Principal>
+      <Dependent Role="DivisionDefaults">
+        <PropertyRef Name="DivisionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DivisionFormScores_ibfk_1">
+    <End Role="Divisions" Type="league_pimaModel.Division" Multiplicity="1" />
+    <End Role="DivisionFormScores" Type="league_pimaModel.DivisionFormScore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Divisions">
+        <PropertyRef Name="DivisionId" />
+      </Principal>
+      <Dependent Role="DivisionFormScores">
+        <PropertyRef Name="DivisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DivisionFormScores_ibfk_2">
+    <End Role="Participants" Type="league_pimaModel.Participant" Multiplicity="1" />
+    <End Role="DivisionFormScores" Type="league_pimaModel.DivisionFormScore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Participants">
+        <PropertyRef Name="ParticipantId" />
+      </Principal>
+      <Dependent Role="DivisionFormScores">
+        <PropertyRef Name="ParticipantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DivisionFormTieHistory_ibfk_1">
+    <End Role="Participants" Type="league_pimaModel.Participant" Multiplicity="1" />
+    <End Role="DivisionFormTieHistory" Type="league_pimaModel.DivisionFormTieHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Participants">
+        <PropertyRef Name="ParticipantId" />
+      </Principal>
+      <Dependent Role="DivisionFormTieHistory">
+        <PropertyRef Name="PlayerOneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DivisionFormTieHistory_ibfk_2">
+    <End Role="Participants" Type="league_pimaModel.Participant" Multiplicity="1" />
+    <End Role="DivisionFormTieHistory" Type="league_pimaModel.DivisionFormTieHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Participants">
+        <PropertyRef Name="ParticipantId" />
+      </Principal>
+      <Dependent Role="DivisionFormTieHistory">
+        <PropertyRef Name="PlayerTwoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DivisionFormTieHistory_ibfk_3">
+    <End Role="Divisions" Type="league_pimaModel.Division" Multiplicity="1" />
+    <End Role="DivisionFormTieHistory" Type="league_pimaModel.DivisionFormTieHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Divisions">
+        <PropertyRef Name="DivisionId" />
+      </Principal>
+      <Dependent Role="DivisionFormTieHistory">
+        <PropertyRef Name="DivisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DivisionFormTieHistory_ibfk_4">
+    <End Role="Divisions" Type="league_pimaModel.Division" Multiplicity="1" />
+    <End Role="DivisionFormTieHistory" Type="league_pimaModel.DivisionFormTieHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Divisions">
+        <PropertyRef Name="DivisionId" />
+      </Principal>
+      <Dependent Role="DivisionFormTieHistory">
+        <PropertyRef Name="DivisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DivisionParticipants_ibfk_1">
+    <End Role="Divisions" Type="league_pimaModel.Division" Multiplicity="1" />
+    <End Role="DivisionParticipants" Type="league_pimaModel.DivisionParticipant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Divisions">
+        <PropertyRef Name="DivisionId" />
+      </Principal>
+      <Dependent Role="DivisionParticipants">
+        <PropertyRef Name="DivisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DivisionParticipants_ibfk_2">
+    <End Role="Participants" Type="league_pimaModel.Participant" Multiplicity="1" />
+    <End Role="DivisionParticipants" Type="league_pimaModel.DivisionParticipant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Participants">
+        <PropertyRef Name="ParticipantId" />
+      </Principal>
+      <Dependent Role="DivisionParticipants">
+        <PropertyRef Name="ParticipantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Divisions_ibfk_1">
+    <End Role="RankGroups" Type="league_pimaModel.RankGroup" Multiplicity="1" />
+    <End Role="Divisions" Type="league_pimaModel.Division" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RankGroups">
+        <PropertyRef Name="RankGroupId" />
+      </Principal>
+      <Dependent Role="Divisions">
+        <PropertyRef Name="RankGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Divisions_ibfk_2">
+    <End Role="Tournaments" Type="league_pimaModel.Tournament" Multiplicity="1" />
+    <End Role="Divisions" Type="league_pimaModel.Division" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tournaments">
+        <PropertyRef Name="TournamentId" />
+      </Principal>
+      <Dependent Role="Divisions">
+        <PropertyRef Name="TournamentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Divisions_ibfk_4">
+    <End Role="DivisionTypes" Type="league_pimaModel.DivisionType" Multiplicity="1" />
+    <End Role="Divisions" Type="league_pimaModel.Division" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DivisionTypes">
+        <PropertyRef Name="DivisionTypeId" />
+      </Principal>
+      <Dependent Role="Divisions">
+        <PropertyRef Name="DivisionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Divisions_ibfk_5">
+    <End Role="DivisionStatuses" Type="league_pimaModel.DivisionStatus" Multiplicity="1" />
+    <End Role="Divisions" Type="league_pimaModel.Division" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DivisionStatuses">
+        <PropertyRef Name="DivisionStatusId" />
+      </Principal>
+      <Dependent Role="Divisions">
+        <PropertyRef Name="DivisionStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DivisionWinners_ibfk_1">
+    <End Role="Divisions" Type="league_pimaModel.Division" Multiplicity="1" />
+    <End Role="DivisionWinners" Type="league_pimaModel.DivisionWinner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Divisions">
+        <PropertyRef Name="DivisionId" />
+      </Principal>
+      <Dependent Role="DivisionWinners">
+        <PropertyRef Name="DivisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DivisionWinners_ibfk_2">
+    <End Role="Participants" Type="league_pimaModel.Participant" Multiplicity="1" />
+    <End Role="DivisionWinners" Type="league_pimaModel.DivisionWinner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Participants">
+        <PropertyRef Name="ParticipantId" />
+      </Principal>
+      <Dependent Role="DivisionWinners">
+        <PropertyRef Name="ParticipantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Participants_ibfk_1">
+    <End Role="Schools" Type="league_pimaModel.School" Multiplicity="1" />
+    <End Role="Participants" Type="league_pimaModel.Participant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schools">
+        <PropertyRef Name="SchoolId" />
+      </Principal>
+      <Dependent Role="Participants">
+        <PropertyRef Name="SchoolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Participants_ibfk_3">
+    <End Role="Ranks" Type="league_pimaModel.Rank" Multiplicity="1" />
+    <End Role="Participants" Type="league_pimaModel.Participant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ranks">
+        <PropertyRef Name="RankId" />
+      </Principal>
+      <Dependent Role="Participants">
+        <PropertyRef Name="RankId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TournamentParticipants_ibfk_2">
+    <End Role="Participants" Type="league_pimaModel.Participant" Multiplicity="1" />
+    <End Role="TournamentParticipants" Type="league_pimaModel.TournamentParticipant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Participants">
+        <PropertyRef Name="ParticipantId" />
+      </Principal>
+      <Dependent Role="TournamentParticipants">
+        <PropertyRef Name="ParticipantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TournamentTeams_ibfk_2">
+    <End Role="Schools" Type="league_pimaModel.School" Multiplicity="1" />
+    <End Role="TournamentTeams" Type="league_pimaModel.TournamentTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schools">
+        <PropertyRef Name="SchoolId" />
+      </Principal>
+      <Dependent Role="TournamentTeams">
+        <PropertyRef Name="SchoolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TournamentParticipants_ibfk_1">
+    <End Role="Tournaments" Type="league_pimaModel.Tournament" Multiplicity="1" />
+    <End Role="TournamentParticipants" Type="league_pimaModel.TournamentParticipant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tournaments">
+        <PropertyRef Name="TournamentId" />
+      </Principal>
+      <Dependent Role="TournamentParticipants">
+        <PropertyRef Name="TournamentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TournamentParticipants_ibfk_3">
+    <End Role="Tournaments" Type="league_pimaModel.Tournament" Multiplicity="1" />
+    <End Role="TournamentParticipants" Type="league_pimaModel.TournamentParticipant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tournaments">
+        <PropertyRef Name="TournamentId" />
+      </Principal>
+      <Dependent Role="TournamentParticipants">
+        <PropertyRef Name="TournamentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TournamentTeams_ibfk_1">
+    <End Role="Tournaments" Type="league_pimaModel.Tournament" Multiplicity="1" />
+    <End Role="TournamentTeams" Type="league_pimaModel.TournamentTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tournaments">
+        <PropertyRef Name="TournamentId" />
+      </Principal>
+      <Dependent Role="TournamentTeams">
+        <PropertyRef Name="TournamentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RankGroupRanks">
+    <End Role="RankGroups" Type="league_pimaModel.RankGroup" Multiplicity="*" />
+    <End Role="Ranks" Type="league_pimaModel.Rank" Multiplicity="*" />
+  </Association>
+  <Association Name="TournamentTeamMembers">
+    <End Role="TournamentTeams" Type="league_pimaModel.TournamentTeam" Multiplicity="*" />
+    <End Role="Participants" Type="league_pimaModel.Participant" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Season">
+    <Key>
+      <PropertyRef Name="SeasonId" />
+    </Key>
+    <Property Type="Int32" Name="SeasonId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tournaments" Relationship="league_pimaModel.Tournaments_ibfk_1" FromRole="Season" ToRole="Tournament" />
+  </EntityType>
+  <Association Name="Tournaments_ibfk_1">
+    <End Type="league_pimaModel.Season" Role="Season" Multiplicity="1" />
+    <End Type="league_pimaModel.Tournament" Role="Tournament" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Season">
+        <PropertyRef Name="SeasonId" />
+      </Principal>
+      <Dependent Role="Tournament">
+        <PropertyRef Name="SeasonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

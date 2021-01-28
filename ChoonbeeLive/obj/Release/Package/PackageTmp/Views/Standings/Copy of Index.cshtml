@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+    IEnumerable<ChoonbeeLive.Models.Standing<ChoonbeeLive.Models.School>> LifetimeSchoolStanding = ViewBag.LifetimeSchoolStanding;
+    IEnumerable<ChoonbeeLive.Models.Standing<ChoonbeeLive.Models.Participant>> LifetimeParticipantStanding = ViewBag.LifetimeParticipantStanding;
+    
+    IEnumerable<ChoonbeeLive.Models.Standing<ChoonbeeLive.Models.School>> SeasonSchoolStanding = ViewBag.SeasonSchoolStanding;
+    IEnumerable<ChoonbeeLive.Models.Standing<ChoonbeeLive.Models.Participant>> SeasonParticipantStanding = ViewBag.SeasonParticipantStanding;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <div>
+        
+        Individual Tournament Results
+
+
+        <h1>Lifetime School Standings</h1>
+        <h4>(Counts league member points only!)</h4>
+        @Html.Partial("~/Views/Standings/SchoolStandings.cshtml", LifetimeSchoolStanding)
+        
+        <h2>Competitor Standings</h2>
+        <h4>(Counts league member points only!)</h4>
+        @Html.Partial("~/Views/Standings/ParticipantStandings.cshtml", LifetimeParticipantStanding)
+
+
+        <hr />
+
+        <h1>Season 2 Standings</h1>
+        
+        <h2>School Standings</h2>
+        <h4>(Counts league member points only!)</h4>
+        @Html.Partial("~/Views/Standings/SchoolStandings.cshtml", SeasonSchoolStanding)
+
+
+        <h2>Competitor Standings</h2>
+        <h4>(Counts league member points only!)</h4>
+        @Html.Partial("~/Views/Standings/ParticipantStandings.cshtml", SeasonParticipantStanding)
+
+    </div>
+</body>
+</html>

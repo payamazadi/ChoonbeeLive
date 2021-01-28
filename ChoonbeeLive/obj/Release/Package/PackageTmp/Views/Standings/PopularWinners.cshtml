@@ -1,0 +1,15 @@
+﻿@model IEnumerable<ChoonbeeLive.Models.Standing<ChoonbeeLive.Models.PopDivisionWinner>>
+
+<table>
+    <tr>
+        <td><b>Division</b></td>
+        <td><b>Winner</b></td>
+    </tr>
+        
+    @foreach(var result in Model){
+        <tr>
+            <td>@result.MemberKey.D.DivisionType.Name - @result.MemberKey.D.RankGroup.Name - @result.MemberKey.D.AgeGroup.Name - @result.MemberKey.D.Genders (<b>@result.MemberKey.Count participants</b>)</td>
+            <td>@result.MemberKey.P.FirstName @result.MemberKey.P.LastName</td>
+        </tr>
+    }
+</table>

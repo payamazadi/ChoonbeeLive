@@ -1,0 +1,77 @@
+﻿<!-- for example, for Weapons only -->
+@model IEnumerable<ChoonbeeLive.Models.CompleteStanding>
+<table>
+    <tr>
+        <td><b>Division ID</b></td>
+        <td><b>Age</b></td>
+        <td><b>Belt</b></td>
+        <td><b>Gender</b></td>
+        <td><b>First</b></td>
+        <td><b>Second</b></td>
+        <td><b>Third</b></td>
+        <td><b>Fourth</b></td>
+    </tr>
+@{
+    var enumerator = Model.GetEnumerator();
+    var table = "";
+    ChoonbeeLive.Models.CompleteStanding record = null;
+
+    if (enumerator.MoveNext())
+    {
+        record = enumerator.Current;
+        var currentDivision = "";
+        var divisionWinnerCounter = 0;
+        
+        do
+        {
+            record = enumerator.Current;
+            if(record.FriendlyId != currentDivision)
+            {
+                if (divisionWinnerCounter == 0)
+                {
+                    table += "<tr>" + getDivisionHeading(record);
+                }
+                else
+                {
+                    table += padCells(4 - divisionWinnerCounter);
+                    table += "</tr><tr>" + getDivisionHeading(record);
+                    divisionWinnerCounter = 0;   
+                }
+                currentDivision = record.FriendlyId;        
+            }
+
+            if(divisionWinnerCounter <= 3)
+            {
+                table += "<td>" + record.Participant.FirstName + " " + record.Participant.LastName + " - " + record.Points + "</td>";
+            }
+            
+            divisionWinnerCounter++;
+
+
+        } while (enumerator.MoveNext());
+        table += "</tr></table>";
+    }
+    else
+    {
+        Response.Write("No data available.");
+    }
+}
+    @Html.Raw(table)
+
+@functions {
+    string padCells(int count)
+    {
+        var ret = "";
+        for (int i = 0; i < count; i++)
+            ret += "<td></td>";
+        return ret;
+    }
+/*<td>Division ID</td>
+        <td>Age</td>
+        <td>Belt</td>
+        <td>Gender</td>*/    
+    string getDivisionHeading(ChoonbeeLive.Models.CompleteStanding record)
+    {
+        return "<td>" + record.FriendlyId + "</td><td>" + record.AgeGroupName + "</td><td>" + record.RankGroupName + "</td><td>" + record.Gender + "</td>";
+    }
+}

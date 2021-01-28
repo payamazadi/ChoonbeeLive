@@ -1,0 +1,11 @@
+﻿@if ((bool)Session["Authenticated"] == true) {
+    <text>
+        @Html.ActionLink("Manage Account", "Index", "Account")        
+        @Html.ActionLink("Logout", "Logout", "Registration")        
+    </text>
+} else {
+    <ul>
+        <li>@Html.ActionLink("Create Account", "CreateAccount", "Registration")</li>
+        <li>@Html.ActionLink("Sign In", "SignIn", "Registration")</li>
+    </ul>
+}

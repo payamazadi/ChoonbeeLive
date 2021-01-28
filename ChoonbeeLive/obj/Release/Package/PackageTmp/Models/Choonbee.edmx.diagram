@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d421301ecc444c309b8d8ed3774d9a70" Name="Diagram1">
+        <EntityTypeShape EntityType="league_pimaModel.AgeGroup" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="league_pimaModel.DivisionDefault" Width="1.5" PointX="6" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="league_pimaModel.DivisionFormScore" Width="1.5" PointX="10.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="league_pimaModel.DivisionFormTieHistory" Width="1.5" PointX="13.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="league_pimaModel.DivisionParticipant" Width="1.5" PointX="10.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="league_pimaModel.Division" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="league_pimaModel.DivisionStatus" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="league_pimaModel.DivisionType" Width="1.5" PointX="0.75" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="league_pimaModel.DivisionWinner" Width="1.5" PointX="10.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="league_pimaModel.Participant" Width="1.5" PointX="8.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="league_pimaModel.RankGroup" Width="1.5" PointX="3.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="league_pimaModel.Rank" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="league_pimaModel.School" Width="1.5" PointX="3.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="league_pimaModel.TournamentParticipant" Width="1.5" PointX="6" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="league_pimaModel.Tournament" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="league_pimaModel.TournamentTeam" Width="1.5" PointX="6" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="league_pimaModel.DivisionDefaults_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.Divisions_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.DivisionDefaults_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.DivisionDefaults_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.DivisionFormScores_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.DivisionFormScores_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.DivisionFormTieHistory_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.DivisionFormTieHistory_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.DivisionFormTieHistory_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.DivisionFormTieHistory_ibfk_4" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.DivisionParticipants_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.DivisionParticipants_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.Divisions_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.Divisions_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.Divisions_ibfk_4" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.Divisions_ibfk_5" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.DivisionWinners_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.DivisionWinners_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.Participants_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.Participants_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.TournamentParticipants_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.TournamentTeams_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.TournamentParticipants_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.TournamentParticipants_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.TournamentTeams_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.RankGroupRanks" ManuallyRouted="false" />
+        <AssociationConnector Association="league_pimaModel.TournamentTeamMembers" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="league_pimaModel.Season" Width="1.5" PointX="6.1479882030505637" PointY="6.08885665521438" />
+        <AssociationConnector Association="league_pimaModel.Tournaments_ibfk_1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

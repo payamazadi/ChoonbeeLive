@@ -1,0 +1,46 @@
+﻿@{
+    IEnumerable<ChoonbeeLive.Models.Standing<ChoonbeeLive.Models.School>> SchoolStanding = ViewBag.SchoolStanding;
+    IEnumerable<ChoonbeeLive.Models.Standing<ChoonbeeLive.Models.PopDivisionWinner>> PopularWinners = ViewBag.PopularWinners;
+    IEnumerable<ChoonbeeLive.Models.CompleteStanding> CompleteStandingsWeapons = ViewBag.CompleteStandingsWeapons;
+    IEnumerable<ChoonbeeLive.Models.CompleteStanding> CompleteStandingsForms = ViewBag.CompleteStandingsForms;
+    IEnumerable<ChoonbeeLive.Models.CompleteStanding> CompleteStandingsSparring = ViewBag.CompleteStandingsSparring;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <div style="padding-left:20px;">
+                    <h1>Current Season Results</h1>
+                    <hr />
+
+                    <h2>School Standings</h2>
+                    <h3>(Counts league member points only!)</h3>
+                    @Html.Partial("~/Views/Standings/SchoolStandings.cshtml", SchoolStanding)<br />
+
+                    <h2>Complete Standings</h2>
+                    <h3>Weapons</h3>
+                    @Html.Partial("~/Views/Standings/CompleteStandings.cshtml", CompleteStandingsWeapons)<br />
+
+                    <h3>Forms</h3>
+                    @Html.Partial("~/Views/Standings/CompleteStandings.cshtml", CompleteStandingsForms)<br />
+
+                    <h3>Sparring</h3>
+                    @Html.Partial("~/Views/Standings/CompleteStandings.cshtml", CompleteStandingsSparring)<br />
+                </div>
+            </td>
+            <td valign="top">
+                @Html.Raw(ViewBag.Archives)
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>

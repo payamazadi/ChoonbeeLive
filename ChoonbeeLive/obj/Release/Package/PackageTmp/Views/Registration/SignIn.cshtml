@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Index.cshtml";
+}
+
+<h2>Sign in</h2>
+
+@using (Html.BeginForm("SignIn", "Registration")) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Tournament</legend>
+
+        <div class="editor-label">
+            Email
+        </div>
+        <div class="editor-field">
+            <input type="text" name="username" id="username" />
+        </div>
+
+        <div class="editor-label">
+            Password
+        </div>
+        <div class="editor-field">
+            <input type="password" name="password" id="password" />
+        </div>
+
+        <p>
+            <input type="submit" value="Login" />
+        </p>
+    </fieldset>
+}
